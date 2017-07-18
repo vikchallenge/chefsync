@@ -4,8 +4,9 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 var="newvariable"
-file '/root/filedemo.txt' do
-	content "My hostname is #{ node['hostname'] }"
+cookbook_file '/root/filedemo.txt' do
+#	content "My hostname is #{ node['hostname'] }"
+	source 'test.txt'
 	action :create
 end
 %w(a b c d e).each do |f|
